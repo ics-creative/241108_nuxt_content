@@ -5,7 +5,7 @@ const props = defineProps<{ color?: string }>();
 <template>
   <div>
     <div class="box" :style="{ color: props.color, borderColor: props.color }">
-      <ContentSlot :use="$slots.default" unwrap="p" />
+      <slot mdc-unwrap="p" />
     </div>
   </div>
 </template>

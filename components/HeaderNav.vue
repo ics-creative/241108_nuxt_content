@@ -1,15 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { data } = await useAsyncData("header", () =>
+    queryCollectionNavigation("docs"),
+);
+</script>
 
 <template>
-  <ContentNavigation>
-    <template #default="{ navigation }">
-      <ul>
-        <li v-for="link of navigation" :key="link._path">
-          <NuxtLink :to="link._path" class="link">{{ link.title }}</NuxtLink>
-        </li>
-      </ul>
-    </template>
-  </ContentNavigation>
+  <ul v-if="data">
+    <li v-for="link of data" :key="link.path">
+      <NuxtLink :to="link.path" class="link">{{ link.title }}</NuxtLink>
+    </li>
+  </ul>
 </template>
 
 <style scoped>

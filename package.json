@@ -11,12 +11,12 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
-    "@nuxt/content": "^2.13.4",
-    "@nuxt/eslint": "^0.6.1",
+    "@nuxt/content": "^3.0.1",
+    "@nuxt/eslint": "^1.0.0",
     "normalize.css": "^8.0.1",
-    "nuxt": "^3.14.0"
+    "nuxt": "^3.15.4"
   },
   "devDependencies": {
-    "prettier": "^3.3.3"
+    "prettier": "^3.4.2"
   }
 }

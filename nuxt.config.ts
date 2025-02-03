@@ -11,17 +11,18 @@ export default defineNuxtConfig({
   css: ["normalize.css/normalize.css", "/assets/styles.css"],
 
   content: {
-    highlight: {
-      // Theme used in all color schemes.
-      theme: "github-light" as const,
-      // OR
-      theme: {
-        // Default theme (same as single string)
-        default: "github-light" as const,
-        // Theme used if `html.dark`
-        dark: "github-dark" as const,
-        // Theme used if `html.sepia`
-        sepia: "monokai" as const,
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            // Default theme (same as single string)
+            default: "github-light" as const,
+            // Theme used if `html.dark`
+            dark: "github-dark" as const,
+            // Theme used if `html.sepia`
+            sepia: "monokai" as const,
+          },
+        },
       },
     },
   },

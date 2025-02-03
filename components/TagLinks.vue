@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const { data } = await useAsyncData("tag", () =>
-  queryContent("blog").where({ $exists: "tag" }).find(),
+    queryCollection("blog").where("tag", "IS NOT NULL").all(),
 );
 const tags = computed(() => {
   const arr = data.value
-    .map((article) => article.tag)
-    .flat()
-    .filter((tag) => !!tag);
+      ?.map((article) => article.tag)
+      .flat()
+      .filter((tag) => !!tag);
   return new Set(arr);
 });
 </script>
